@@ -15,6 +15,8 @@ public class BattleManager : MonoBehaviour
     private UnityEvent _onBattleStarted;
     private List<Fighter> _Fighters = new List<Fighter>();
     private Coroutine _BattleCouroutine;
+
+    private DamageTarget _damageTarget = new DamageTarget();
     public void AddFighter(Fighter fighter)
     {
         _Fighters.Add(fighter);
@@ -60,8 +62,16 @@ public class BattleManager : MonoBehaviour
             Attack attack = attacker.attacks.getRandomAttack();
             attacker.CharacterAnimator.Play(attack.animationName);
             SoundManager.instance.Play(attack.soundName);
+            Instantiate(attack.particlesPrefab, attacker.transform.position, Quaternion.identity);
+            GameObject attackParticles = Instantiate(attack.particlesPrefab, attacker.transform.position, Quaternion.identity);
+            attackParticles.transform.SetParent(attacker.transform);
             yield return new WaitForSeconds(attack.attackTime);
-            defender.Health.TakeDamage(Random.Range(attack.minDamage, attack.MaxDamage));
+            float damage = Random.Range(attack.minDamage, attack.MaxDamage);
+            GameObject defendParticles = Instantiate(attack.hitPatrticlesPrefab, defender.transform.position,Quaternion.identity);
+            defendParticles.transform.SetParent(defender.transform);
+            Instantiate(attack.hitPatrticlesPrefab, defender.transform);
+            _damageTarget.SetDamageTarget(damage, defender.transform);
+            defender.Health.TakeDamage(_damageTarget);
             if (defender.Health.CurrentHealth <= 0)
             {
                 _Fighters.Remove(defender);
