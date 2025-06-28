@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe586ec177dff6748944d20c2f8864e3, type: 3}
   m_Name: Patamon
   m_EditorClassIdentifier: 
-  attacks: []
+  attacks:
+  - attackName: attack02
+    minDamage: 20
+    MaxDamage: 100
+    attackTime: 3
+    animationName: attack02
+    soundName: Voicy_Koraidon- Cry 1
+    hitPatrticlesPrefab: {fileID: 0}
+    particlesPrefab: {fileID: 0}

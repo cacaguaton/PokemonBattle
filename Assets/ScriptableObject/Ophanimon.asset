@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Ophanimon
   m_EditorClassIdentifier: 
   attacks:
-  - minDamage: 20
+  - attackName: Cole
+    minDamage: 20
     MaxDamage: 100
     attackTime: 3
     animationName: skill1
     soundName: OphaimonAttack1
+    hitPatrticlesPrefab: {fileID: 0}
     particlesPrefab: {fileID: 3432958286849152088, guid: 87ee7299dd44ed747af24dbb91bcd33b,
       type: 3}
