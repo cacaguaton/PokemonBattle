@@ -19,6 +19,7 @@ MonoBehaviour:
     attackTime: 3
     animationName: skill1
     soundName: OphaimonAttack1
-    hitPatrticlesPrefab: {fileID: 0}
+    hitPatrticlesPrefab: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7,
+      type: 3}
     particlesPrefab: {fileID: 3432958286849152088, guid: 87ee7299dd44ed747af24dbb91bcd33b,
       type: 3}

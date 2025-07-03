@@ -12,6 +12,8 @@ public class Timer : MonoBehaviour
     private Image _image;
     [SerializeField]
     private List<TimerData> _timerDataList;
+    
+    [SerializeField]
     private string _animationName = "TimerShowSeconds";
     [SerializeField]
     private UnityEvent _onTimerEnd;

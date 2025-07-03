@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Patamon
   m_EditorClassIdentifier: 
   attacks:
-  - attackName: attack02
+  - attackName: Placaje
     minDamage: 20
     MaxDamage: 100
     attackTime: 3
     animationName: attack02
     soundName: Voicy_Koraidon- Cry 1
-    hitPatrticlesPrefab: {fileID: 0}
-    particlesPrefab: {fileID: 0}
+    hitPatrticlesPrefab: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0,
+      type: 3}
+    particlesPrefab: {fileID: 3432958286849152088, guid: 87ee7299dd44ed747af24dbb91bcd33b,
+      type: 3}
