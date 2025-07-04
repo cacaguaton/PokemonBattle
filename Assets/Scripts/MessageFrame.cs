@@ -32,6 +32,7 @@ public class MessageFrame : MonoBehaviour
     }
     public void ShowMessage(string message)
     {
+        SoundManager.instance.Play("CuadroTextoEntrada");
         StopCoroutine();
         _currentText = message;
         _text.text = "";
@@ -42,6 +43,7 @@ public class MessageFrame : MonoBehaviour
     {
         for (int i = 0; i < _currentText.Length; i++)
         {
+            SoundManager.instance.Play("Escritura");
             _text.text += _currentText[i];
             yield return new WaitForSeconds(_timeBetweenLetters);
         }
@@ -59,6 +61,7 @@ public class MessageFrame : MonoBehaviour
     public void StopMessage()
     {
         StopCoroutine();
+        SoundManager.instance.Play("CuadroTextoSalida");
         _animator.Play(_hideAnimationName, 0, 0f);
         _text.text = "";
     }
