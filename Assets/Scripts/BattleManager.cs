@@ -62,7 +62,7 @@ public class BattleManager : MonoBehaviour
     }
     private IEnumerator BattleCoroutine()
     {
-        while (_fighters.Count > 1)
+        while (_fighters.Count > 2)
         {
             Fighter attacker = _fighters[Random.Range(0, _fighters.Count)];
             Fighter defender = attacker;
